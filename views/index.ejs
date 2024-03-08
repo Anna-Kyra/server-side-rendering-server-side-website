@@ -1,0 +1,27 @@
+<%- include('./partials/head')%>
+<%- include('partials/navigatie', {current: '/'}); %>
+
+<h1>Home</h1>
+
+<a href="/">doe de test</a>
+<% stakeholders.forEach(function(stakeholder) { %>
+	<article>
+    <%= stakeholder.type %>
+	</article>
+<% }) %>
+
+<% scores.forEach(function(score) { %>
+	<article>
+    <%= score.score %>
+	</article>
+<% }) %>
+
+<% companies.forEach(function(companie) { %>
+	<article>
+    <%= companies.name %>
+	</article>
+<% }) %>
+
+<%- include('partials/sdgs', {current: '/'}); %>
+
+<%- include('./partials/foot')%>
