@@ -1,27 +1,37 @@
 <%- include('./partials/head')%>
-<%- include('partials/navigatie', {current: '/'}); %>
 
-<h1>Home</h1>
+<header>
 
-<a href="/">doe de test</a>
-<% stakeholders.forEach(function(stakeholder) { %>
-	<article>
-    <%= stakeholder.type %>
-	</article>
-<% }) %>
+</header>
 
-<% scores.forEach(function(score) { %>
-	<article>
-    <%= score.score %>
-	</article>
-<% }) %>
+<main>
+	<h1>“ De natuur is buigzaam, als we haar niet laten barsten “</h1>
+	<p> Alleen voor X minuten krijg je een volledig overzicht op de milieuvriendelijkheid van uw bedrijf.</p>
 
-<% companies.forEach(function(companie) { %>
-	<article>
-    <%= companies.name %>
-	</article>
-<% }) %>
+	<button type="button" onclick="location.href='/vragenlijst'">Doe de test</button>
+	<button type="button" onclick="location.href='/dashboard'">Ik heb al een account</button>
 
-<%- include('partials/sdgs', {current: '/'}); %>
+	<button>ontdek onze visie</button>
+	<%- include('./partials/sdgs')%>
+	<!-- <% stakeholders.forEach(function(stakeholder) { %>
+		<article>
+		<%= stakeholder.type %>
+		</article>
+	<% }) %>
+	
+	<% scores.forEach(function(score) { %>
+		<article>
+		<%= score.score %>
+		</article>
+	<% }) %>
+	
+		<article>
+		<%= companies.name %>
+		</article> -->
+</main>
+
+<footer>
+
+</footer>
 
 <%- include('./partials/foot')%>

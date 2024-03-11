@@ -23,15 +23,14 @@ app.use(express.urlencoded({extended: true}))
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd-agency.directus.app/items'
 
+const sdgData = await fetchJson(apiUrl + '/hf_sdgs')
 const stakeholdersData = await fetchJson(apiUrl + '/hf_stakeholders')
 const scoresData = await fetchJson(apiUrl + '/hf_scores')
-const companiesData = await fetchJson(apiUrl + '/hf_companies')
-console.log(companiesData.data)
-
+const companiesData = await fetchJson(apiUrl + '/hf_companies/1')
+console.log(companiesData.data.name)
 
 // Home
 app.get('/', function(request, response) {
-    fetchJson(apiUrl + '/hf_sdgs').then((sdgData) => {
         // console.log(sdgData.data)
         response.render('index', {
             sdgs: sdgData.data,
@@ -39,11 +38,19 @@ app.get('/', function(request, response) {
             scores: scoresData.data,
             companies: companiesData.data
         })
-    })
 })
+
 // Stakeholder pagina's
 app.get('/dashboard', function(request, response) {
-	response.render('dashboard')
+    fetchJson(apiUrl + '/hf_sdgs').then((sdgData) => {
+        // console.log(sdgData.data)
+        response.render('dashboard', {
+            sdgs: sdgData.data,
+            stakeholders: stakeholdersData.data,
+            scores: scoresData.data,
+            companies: companiesData.data
+        })
+    })
 })
 
 app.get('/medewerkers', function(request, response) {
@@ -82,9 +89,19 @@ app.get('/omgeving', function(request, response) {
     })
 })
 
+app.get('/vragenlijst', function(request, response) {
+	response.render('vragenlijst', {
+        current: '/vragenlijst',
+        sdgs: sdgData.data,
+        stakeholders: stakeholdersData.data,
+        scores: scoresData.data,
+        companies: companiesData.data
+    })
+})
+
 
 // Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8008)
+app.set('port', process.env.PORT || 8009)
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function() {

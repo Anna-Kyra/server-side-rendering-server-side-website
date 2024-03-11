@@ -1,5 +1,93 @@
 <%- include('./partials/head')%>
-<%- include('partials/navigatie'); %>
-<h1><%= title %></h1>
+<nav>
+    <%- include('partials/navigatie', {current: '/dashboard'}); %>
+</nav>
+<header>
+        <h1><%= title %></h1>
+        <small>Let's check your progress</small>
+        <article>
+            <p>Deelgenomen januari X</p>
+            <p>X medewerkers</p>
+
+            <img src="#" alt="profiel">
+        </article>
+        <article>
+            <div><img src="#" alt="nieuw"></div>
+            <p>Nieuw</p>
+        </article>
+</header>
+
+<main>
+    <section>
+        <h2>Jouw Hand-Footprint</h2>
+        <small>Jouw hand-footprint uitgelegd</small>
+
+        <div class="progress-bar">
+            <span style="width: 25%;"></span>
+        </div>
+
+        <section>
+            <article>
+                <h2>20 <span>%</span></h2>
+                <img src="styles/assets/icons/hand.svg" alt="hand">
+            </article>
+            <ul>
+                <li>
+                    <img src="styles/assets/icons/icons_bedrijf_black.svg" alt="bedrijf">
+                    <h4>10 <strong>%</strong></h4>
+                    <p class="number">1.</p>
+                    <button>Bedrijf</button>
+                </li>
+                <li>
+                    <img src="styles/assets/icons/icons_bedrijf_black.svg" alt="bedrijf">
+                    <h4>20 <strong>%</strong></h4>
+                    <p class="number">2.</p>
+                    <button>Financiers</button>
+                </li>
+                <li>
+                    <img src="styles/assets/icons/icons_bedrijf_black.svg" alt="bedrijf">
+                    <h4>15 <strong>%</strong></h4>
+                    <p class="number">3.</p>
+                    <button>Omgeving</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <article>
+                <h2>80 <span>%</span></h2>
+                <img src="styles/assets/icons/foot.svg" alt="voet">
+            </article>
+            <ul>
+                <li>
+                    <img src="styles/assets/icons/icons_bedrijf_black.svg" alt="bedrijf">
+                    <h4>30 <strong>%</strong></h4>
+                    <p class="number">1.</p>
+                    <button>Bedrijf</button>
+                </li>
+                <li>
+                    <img src="styles/assets/icons/icons_bedrijf_black.svg" alt="bedrijf">
+                    <h4>20 <strong>%</strong></h4>
+                    <p class="number">2.</p>
+                    <button>Omgeving</button>
+                </li>
+                <li>
+                    <img src="styles/assets/icons/icons_bedrijf_black.svg" alt="bedrijf">
+                    <h4>15 <strong>%</strong></h4>
+                    <p class="number">3.</p>
+                    <button>Klanten</button>
+                </li>
+            </ul>
+        </section>
+
+        <button>Calculeer opnieuw</button>
+    </section>
+</main>
+
+<footer>
+
+</footer>
+
+
 
 <%- include('./partials/foot')%>

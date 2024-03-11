@@ -1,3 +1,42 @@
 <%- include('./partials/head')%>
-
+    <header>
+        <section>
+            <section>
+                <div class="q-icon"><img src="styles/assets/icons/icons_bedrijf_black.svg" alt="bedrijf"></div>
+                <p>bedrijf</p>
+            </section>
+            <button type="button" class="button annuleer" value="Back" onclick="window.history.back()">Annuleer</button>
+        </section>
+        <div class="progress-bar">
+            <span style="width: 25%;"></span>
+        </div>
+    </header>
+    <main>
+        <form>
+        <fieldset>
+            <legend>Welke SDG's zijn van toepassing op ... <strong>*</strong></legend>
+            <i>
+                Denk bijv aan het feit dat jouw bedrijf loon betaalt, waardoor SDG 1 en 2 worden geholpen. 
+                <br>Of kijk naar de arbeidsomstandigheden (buro, stoel, licht, werktijden)  waarmee SDG 3 wordt geholpen.
+            </i>
+            <section>
+                <h4 id="choose">Kies <output id="cijfer">0</output> uit 5</h4>
+                
+                <%- include('./partials/sdgs')%>
+            </section>
+                <label id="messageLabel"></label>
+                
+            <section>
+                <div>
+                    <button class="button visibility">terug</button>
+                    <button type="submit" class="button">volgende vraag</button>
+                </div>
+            </section>
+        </fieldset>
+    </form>
+        <section>
+            <h3>
+            </h3>    
+        </section>  
+    </main>
 <%- include('./partials/foot')%>
